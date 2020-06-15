@@ -4,7 +4,7 @@ import './header.css';
 export const Header = () => {
     return (
         <h2 className="header-txt">
-            Expence Tracker
+            Expense Tracker
         </h2>
     )
 }
