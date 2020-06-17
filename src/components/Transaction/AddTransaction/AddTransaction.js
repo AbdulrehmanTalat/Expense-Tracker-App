@@ -7,13 +7,13 @@ export const AddTransaction = () => {
     const {addTransaction}  = useContext(GloablContext)
     const onSubmit = e => {
         e.preventDefault();
-        if(text == ''){
+        if(text === ''){
             alert("Please enter a valid Title")
            } 
-        if(amount == 0){
+        if(amount === 0){
          alert("Amount Should not be 0")
          }
-         else if(amount != 0 && text != null){
+         else if(amount !== 0 && text !== null){
         const newTransaction = {
             id: Math.floor(Math.random() * 100000000),
             text,
