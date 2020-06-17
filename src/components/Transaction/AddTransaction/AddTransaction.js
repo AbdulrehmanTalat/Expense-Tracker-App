@@ -7,13 +7,20 @@ export const AddTransaction = () => {
     const {addTransaction}  = useContext(GloablContext)
     const onSubmit = e => {
         e.preventDefault();
-
+        if(text == ''){
+            alert("Please enter a valid Title")
+           } 
+        if(amount == 0){
+         alert("Amount Should not be 0")
+         }
+         else if(amount != 0 && text != null){
         const newTransaction = {
             id: Math.floor(Math.random() * 100000000),
             text,
             amount: +amount
         }
         addTransaction(newTransaction);
+    }
     }
     return (
         <div>
@@ -24,11 +31,8 @@ export const AddTransaction = () => {
             <input type="text" value={text} onChange={(e)=> setText(e.target.value)} placeholder="Enter Type of Transaction" />
             </div>
             <div className="form-control">
-            <label htmlFor="amount">
-                 Amount <br/>
-                 (negative - expense, positive - income)
-            </label>
-            <input type="number" value={amount} onChange={(e)=> setAmount(e.target.value)}  placeholder="Enter Amount"/>
+          
+            <input type="number" min="0" value={amount} onChange={(e)=> setAmount(e.target.value)}  placeholder="Enter Amount"/>
             </div>
             <button className="btn">Add Transaction</button>
             </form>
