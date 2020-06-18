@@ -69,8 +69,13 @@ h3 {
   .money.plus {
     color: #2ecc71;
   }
-  
+  .money.plus:hover {
+    color: #2ecc71;
+  }
   .money.minus {
+    color: #c0392b;
+  }
+  .money.minus:hover{
     color: #c0392b;
   }
   
